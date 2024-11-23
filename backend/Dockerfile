@@ -12,4 +12,4 @@ ENV NODE_ENV=production
 
 RUN npm run build
 
-CMD ["npm", "start"]
+CMD npm run typeorm:migration:run && npm run seed:run && npm start

@@ -4,6 +4,13 @@ config();
 
 const vars = process.env;
 
+const IS_PRODUCTION = vars.NODE_ENV === 'production' && !process.env.TYPEORM_CLI;
+const FILE_EXTENSION = IS_PRODUCTION ? 'js' : 'ts';
+
+const DB_ENTITIES = [`**/**/entity.${FILE_EXTENSION}`];
+const DB_MIGRATIONS = [`**/database/migrations/**/*.${FILE_EXTENSION}`];
+const DB_SEEDS = [`**/database/seeds/**/*.${FILE_EXTENSION}`];
+
 const env = {
   serverPort: vars.SERVER_PORT ?? 8080,
   dbConfig: {
@@ -12,8 +19,9 @@ const env = {
     username: vars.DB_USERNAME ?? 'postgres',
     password: vars.DB_PASSWORD ?? 'postgres',
     database: vars.DB_NAME ?? 'postgres_db',
-    entitiesPath: vars.DB_ENTITIES ? [vars.DB_ENTITIES] : ['**/**/entity.ts'],
-    migrationsPath: vars.DB_MIGRATIONS ? [vars.DB_MIGRATIONS] : ['**/database/migrations/**/*.ts'],
+    entitiesPath: DB_ENTITIES,
+    migrationsPath: DB_MIGRATIONS,
+    seedsPath: DB_SEEDS,
   },
 };
 
