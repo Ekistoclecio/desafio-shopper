@@ -1,13 +1,13 @@
-import '../module-aliases'
+import '../module-aliases';
 
-import { DataSource, DataSourceOptions } from "typeorm";
-import env from "@/config/env";
-
+import { DataSource, DataSourceOptions } from 'typeorm';
+import { SeederOptions } from 'typeorm-extension';
+import env from '@/config/env';
 
 const { dbConfig } = env;
 
-const dataSourceOptions: DataSourceOptions = {
-  type: "postgres",
+const dataSourceOptions: DataSourceOptions & SeederOptions = {
+  type: 'postgres',
   host: dbConfig.host,
   port: dbConfig.port,
   username: dbConfig.username,
@@ -15,6 +15,7 @@ const dataSourceOptions: DataSourceOptions = {
   database: dbConfig.database,
   entities: dbConfig.entitiesPath,
   migrations: dbConfig.migrationsPath,
+  seeds: dbConfig.seedsPath,
   logging: false,
 };
 

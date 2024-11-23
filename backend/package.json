@@ -10,10 +10,10 @@
     "typeorm": "TYPEORM_CLI=true typeorm-ts-node-commonjs",
     "typeorm:ds": "npm run typeorm -- -d ./src/config/database/data-source.ts",
     "typeorm:migration:generate": "npm run typeorm:ds migration:generate -- src/config/database/migrations/$npm_config_migration_name",
-    "typeorm:migration:create": "npm run typeorm migration:create -- src/config/database/migrations/$npm_config_migration_name",
     "typeorm:migration:run": "npm run typeorm:ds migration:run",
     "typeorm:migration:status": "npm run typeorm:ds migration:show",
-    "typeorm:migration:rollback": "npm run typeorm:ds migration:revert"
+    "typeorm:migration:rollback": "npm run typeorm:ds migration:revert",
+    "seed:run": "TYPEORM_CLI=true ts-node ./node_modules/typeorm-extension/bin/cli.cjs seed:run --dataSource ./src/config/database/data-source.ts"
   },
   "keywords": [],
   "author": "",
@@ -35,6 +35,7 @@
     "module-alias": "^2.2.3",
     "pg": "^8.13.1",
     "reflect-metadata": "^0.2.2",
-    "typeorm": "^0.3.20"
+    "typeorm": "^0.3.20",
+    "typeorm-extension": "^3.6.3"
   }
 }
