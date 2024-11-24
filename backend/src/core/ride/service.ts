@@ -98,6 +98,13 @@ export class RideService {
   public async getRideHistory(customer_id: string, driver_id?: string): Promise<RideHistoryResponse> {
     rideDTOInstance.validateRideHistoryRequestParams({ customer_id, driver_id });
     const rides = await this.rideRepository.findByCustomerId(customer_id, Number(driver_id));
+    if (!rides || rides.length === 0) {
+      throw new BaseError({
+        error_code: 'NO_RIDES_FOUND',
+        error_description: 'Não foi possível encontrar nenhuma viagem para o cliente informado.',
+        response_code: 404,
+      });
+    }
     return {
       customer_id,
       rides: rideDTOInstance.transformToRideHistory(rides),
