@@ -65,10 +65,11 @@ export class RideService {
 
     const driver = await this.driveRepository.findById(data.driver.id);
 
-    if (!driver) {
+    if (!driver || driver.name !== data.driver.name) {
       throw new BaseError({
         error_code: 'DRIVER_NOT_FOUND',
-        error_description: 'Desculpe, não foi possível encontrar o motorista selecionado.',
+        error_description:
+          'O motorista selecionado não foi encontrado ou os dados estão incorretos. Por favor, verifique as informações e tente novamente.',
         response_code: 404,
       });
     }
