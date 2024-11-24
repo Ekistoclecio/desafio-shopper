@@ -1,7 +1,5 @@
 import { BaseError } from '@/core/errors/baseError';
-import { rideDTOInstance } from '@/core/ride/dto';
 import { GoogleMapsEstimateResponse } from '@/core/googleMaps/types';
-import { RideEstimateResult } from '@/core/ride/types';
 import axios, { AxiosInstance } from 'axios';
 
 const API_KEY = process.env.GOOGLE_API_KEY;
