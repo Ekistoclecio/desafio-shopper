@@ -34,3 +34,22 @@ export type RideEstimateResult = {
   routeResponse: GoogleMapsEstimateResponse;
   options: DriverOption[];
 };
+
+export type RideHistoryResponse = {
+  customer_id: string;
+  rides: RideHistoryItem[];
+};
+
+export type RideHistoryItem = {
+  id: number;
+  date: Date;
+  origin: string;
+  destination: string;
+  distance: number;
+  duration: string;
+  value: number;
+  driver: {
+    id: number;
+    name: string;
+  };
+};

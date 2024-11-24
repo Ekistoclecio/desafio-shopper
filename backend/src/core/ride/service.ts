@@ -1,12 +1,16 @@
 import { DriverRepository, driverRepositoryInstance } from '@/core/driver/repository';
 import { DriverService, driverServiceInstance } from '@/core/driver/service';
 import { BaseError } from '@/core/errors/baseError';
-import { ValidateFieldsError } from '@/core/errors/validateFieldsError';
 import { GoogleMapsService, googleMapsServiceInstance } from '@/core/googleMaps/service';
 import { rideDTOInstance } from '@/core/ride/dto';
 import { Ride } from '@/core/ride/entity';
 import { RideRepository, rideRepositoryInstance } from '@/core/ride/repository';
-import { RideConfirmRequestBody, RideEstimateRequestBody, RideEstimateResult } from '@/core/ride/types';
+import {
+  RideConfirmRequestBody,
+  RideEstimateRequestBody,
+  RideEstimateResult,
+  RideHistoryResponse,
+} from '@/core/ride/types';
 
 export class RideService {
   private static instance: RideService | null = null;
@@ -89,6 +93,15 @@ export class RideService {
     );
 
     await this.rideRepository.create(newRide);
+  }
+
+  public async getRideHistory(customer_id: string, driver_id?: string): Promise<RideHistoryResponse> {
+    rideDTOInstance.validateRideHistoryRequestParams({ customer_id, driver_id });
+    const rides = await this.rideRepository.findByCustomerId(customer_id, Number(driver_id));
+    return {
+      customer_id,
+      rides: rideDTOInstance.transformToRideHistory(rides),
+    };
   }
 }
 

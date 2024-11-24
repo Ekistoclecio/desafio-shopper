@@ -16,7 +16,10 @@ export class RideController {
   };
 
   public getRideHistory = async (req: Request, res: Response): Promise<any> => {
-    return res.status(200).json({ message: 'Ride history' });
+    const { customer_id } = req.params;
+    const { driver_id } = req.query;
+    const response = await this.rideService.getRideHistory(customer_id, driver_id as string);
+    return res.status(200).json(response);
   };
 
   public static getRouter() {
