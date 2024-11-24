@@ -21,32 +21,8 @@ export class RideService {
     return RideService.instance;
   }
 
-  public validateEstimateRequest(requestBody: RideEstimateRequestBody): void {
-    if (!requestBody.customer_id) {
-      throw new BaseError({
-        error_code: 'INVALID_DATA',
-        error_description: 'O email é obrigatório',
-        response_code: 400,
-      });
-    }
-    if (!requestBody.origin) {
-      throw new BaseError({
-        error_code: 'INVALID_DATA',
-        error_description: 'O endereço de origem é obrigatório',
-        response_code: 400,
-      });
-    }
-    if (!requestBody.destination) {
-      throw new BaseError({
-        error_code: 'INVALID_DATA',
-        error_description: 'O endereço de destino é obrigatório',
-        response_code: 400,
-      });
-    }
-  }
-
   public async getEstimate(data: RideEstimateRequestBody): Promise<RideEstimateResult> {
-    this.validateEstimateRequest(data);
+    rideDTOInstance.validateEstimateRequestBody(data);
     const googleMapsEstimateResponse = await this.googleMapsService.calculateEstimate(data.origin, data.destination);
 
     if (!googleMapsEstimateResponse.routes || googleMapsEstimateResponse.routes.length === 0) {

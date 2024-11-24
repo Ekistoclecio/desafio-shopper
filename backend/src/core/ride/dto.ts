@@ -1,8 +1,22 @@
-import { Driver } from '@/core/driver/entity';
+import { ValidateFieldsError } from '@/core/errors/validateFieldsError';
 import { GoogleMapsEstimateResponse } from '@/core/googleMaps/types';
-import { RideEstimateResult } from '@/core/ride/types';
+import { RideEstimateRequestBody, RideEstimateResult } from '@/core/ride/types';
 
 export class RideDTO {
+  public validateEstimateRequestBody(requestBody: RideEstimateRequestBody): void {
+    const validations = [
+      { field: 'customer_id', message: 'O email é obrigatório.' },
+      { field: 'origin', message: 'O endereço de origem é obrigatório.' },
+      { field: 'destination', message: 'O endereço de destino é obrigatório.' },
+    ];
+
+    validations.forEach(({ field, message }) => {
+      if (!requestBody[field as keyof RideEstimateRequestBody]) {
+        throw new ValidateFieldsError(message);
+      }
+    });
+  }
+
   public transformToRideEstimate(
     googleMapsEstimateResponse: GoogleMapsEstimateResponse,
   ): Omit<RideEstimateResult, 'options'> {
