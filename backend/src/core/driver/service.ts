@@ -17,7 +17,7 @@ export class DriverService {
 
   public async findAvailableDriverOptions(rideDistanceInMeters: number): Promise<DriverOption[]> {
     const distanceInKm = rideDistanceInMeters / 1000;
-    const drivers = await this.driverRepository.getDriversByMinimumKm(Math.ceil(distanceInKm));
+    const drivers = await this.driverRepository.findDriversByMinimumKm(Math.ceil(distanceInKm));
 
     if (!drivers || drivers.length === 0) {
       throw new BaseError({

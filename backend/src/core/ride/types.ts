@@ -7,6 +7,19 @@ export type RideEstimateRequestBody = {
   destination: string;
 };
 
+export type RideConfirmRequestBody = {
+  customer_id: string;
+  origin: string;
+  destination: string;
+  distance: number;
+  duration: string;
+  driver: {
+    id: number;
+    name: string;
+  };
+  value: number;
+};
+
 export type RideEstimateResult = {
   origin: {
     latitude: number;

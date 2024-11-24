@@ -17,8 +17,12 @@ export class DriverRepository {
     return DriverRepository.instance;
   }
 
-  public async getDriversByMinimumKm(rideDistanceInKm: number): Promise<any> {
+  public async findDriversByMinimumKm(rideDistanceInKm: number): Promise<Driver[]> {
     return this.repository.find({ where: { minimumRequiredKm: LessThan(rideDistanceInKm) } });
+  }
+
+  public async findById(id: number): Promise<Driver | null> {
+    return this.repository.findOneBy({ id });
   }
 }
 

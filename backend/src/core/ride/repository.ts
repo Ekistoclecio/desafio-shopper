@@ -16,6 +16,10 @@ export class RideRepository {
     }
     return RideRepository.instance;
   }
+
+  public async create(ride: Ride): Promise<Ride> {
+    return this.repository.save(ride);
+  }
 }
 
 export const rideRepositoryInstance = RideRepository.getInstance();

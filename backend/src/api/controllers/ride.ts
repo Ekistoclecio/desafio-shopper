@@ -11,7 +11,8 @@ export class RideController {
   };
 
   public createRide = async (req: Request, res: Response): Promise<any> => {
-    return res.status(200).json({ message: 'Ride created' });
+    await this.rideService.confirmRide(req.body);
+    return res.status(200).json({ success: true });
   };
 
   public getRideHistory = async (req: Request, res: Response): Promise<any> => {

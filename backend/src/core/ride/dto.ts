@@ -1,11 +1,11 @@
 import { ValidateFieldsError } from '@/core/errors/validateFieldsError';
 import { GoogleMapsEstimateResponse } from '@/core/googleMaps/types';
-import { RideEstimateRequestBody, RideEstimateResult } from '@/core/ride/types';
+import { RideConfirmRequestBody, RideEstimateRequestBody, RideEstimateResult } from '@/core/ride/types';
 
 export class RideDTO {
   public validateEstimateRequestBody(requestBody: RideEstimateRequestBody): void {
     const validations = [
-      { field: 'customer_id', message: 'O email é obrigatório.' },
+      { field: 'customer_id', message: 'O ID do usuário é obrigatório.' },
       { field: 'origin', message: 'O endereço de origem é obrigatório.' },
       { field: 'destination', message: 'O endereço de destino é obrigatório.' },
     ];
@@ -15,6 +15,24 @@ export class RideDTO {
         throw new ValidateFieldsError(message);
       }
     });
+  }
+
+  public validateConfirmRequestBody(requestBody: RideConfirmRequestBody): void {
+    const validations = [
+      { field: 'customer_id', message: 'O ID do usuário é obrigatório.' },
+      { field: 'origin', message: 'O endereço de origem é obrigatório.' },
+      { field: 'destination', message: 'O endereço de destino é obrigatório.' },
+    ];
+
+    validations.forEach(({ field, message }) => {
+      if (!requestBody[field as keyof RideEstimateRequestBody]) {
+        throw new ValidateFieldsError(message);
+      }
+    });
+
+    if (!requestBody.driver || !requestBody.driver.id || !requestBody.driver.name) {
+      throw new ValidateFieldsError('Os dados do motorista são inválidos ou estão incompletos.');
+    }
   }
 
   public transformToRideEstimate(
