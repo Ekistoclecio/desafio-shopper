@@ -9,7 +9,7 @@ export class Ride {
   @Column({ name: 'customer_id', type: 'varchar', length: 255 })
   customerId?: string;
 
-  @Column({ name: 'date', type: 'date' })
+  @Column({ name: 'date', type: 'timestamp' })
   date: Date;
 
   @Column({ name: 'origin', type: 'varchar', length: 255 })
@@ -38,6 +38,7 @@ export class Ride {
     distance: number,
     duration: string,
     value: number,
+    driver: Driver,
   ) {
     this.customerId = customerId;
     this.date = date;
@@ -46,5 +47,6 @@ export class Ride {
     this.distance = distance;
     this.duration = duration;
     this.value = value;
+    this.driver = driver;
   }
 }
