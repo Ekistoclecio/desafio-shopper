@@ -1,0 +1,7 @@
+!.storybook
+!.jest
+!.vscode
+!.dist
+generators/
+node_modules/
+coverage/
