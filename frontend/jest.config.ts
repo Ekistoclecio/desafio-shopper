@@ -11,6 +11,7 @@ const config: Config = {
     'src/utils',
     'src/providers',
     'src/App.tsx',
+    'src/routes',
   ],
   collectCoverage: true,
   collectCoverageFrom: [
@@ -22,17 +23,20 @@ const config: Config = {
     '!src/theme/**',
     '!src/utils/**',
     '!src/providers/**',
+    '!src/routes/**',
     '!src/App.tsx',
   ],
   setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts'],
   modulePaths: ['<rootDir>/src/'],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
+    '^.+\\.(jpg|jpeg|png|gif|webp|svg)$': '<rootDir>/.jest/mocks/fileMock.ts',
   },
   transform: {
     '^.+\\.(ts|tsx)$': ['ts-jest', { tsconfig: '<rootDir>/tsconfig.app.json' }],
     '^.+\\.(js|jsx)$': 'babel-jest',
   },
+  transformIgnorePatterns: ['node_modules/(?!@mui)', '\\.(jpg|jpeg|png|gif|webp|svg)$'],
 };
 
 export default config;
