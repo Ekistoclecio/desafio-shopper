@@ -1,9 +1,10 @@
 import { Providers } from '@/providers';
+import { AppRoutes } from '@/routes/index.tsx';
 
 function App() {
   return (
     <Providers>
-      <h1>hello</h1>
+      <AppRoutes />
     </Providers>
   );
 }
