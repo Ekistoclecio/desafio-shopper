@@ -6,6 +6,9 @@ export const globalStyle = (theme: Theme) => ({
     margin: 0,
     padding: 0,
   },
+  html: {
+    fontSize: '62.5%',
+  },
   body: {
     backgroundColor: theme.palette.background.default,
     WebkitFontSmoothing: 'antialiased',
