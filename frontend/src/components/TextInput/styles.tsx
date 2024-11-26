@@ -15,11 +15,16 @@ export const CustomInput = styled(InputBase)(({ theme }) => ({
   '& .MuiInputBase-input': {
     borderRadius: 4,
     position: 'relative',
-    backgroundColor: '#F3F6F9',
+    backgroundColor: theme.palette.grey[50],
     border: '1px solid',
-    borderColor: '#E0E3E7',
+    borderColor: theme.palette.grey[300],
     fontSize: 16,
     padding: '8px 12px',
+
+    '&::placeholder': {
+      color: theme.palette.grey[500],
+      opacity: 1,
+    },
 
     '&:focus': {
       boxShadow: `${alpha(theme.palette.primary.main, 0.25)} 0 0 0 0.2rem`,
