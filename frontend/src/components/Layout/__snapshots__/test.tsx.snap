@@ -2,7 +2,7 @@
 
 exports[`<Layout /> should render the Layout 1`] = `
 <div
-  class="MuiBox-root css-1i3igiy"
+  class="MuiBox-root css-1t0qyeu"
 >
   <main
     class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-1rt5ekp-MuiPaper-root"
