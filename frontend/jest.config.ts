@@ -5,7 +5,7 @@ const config: Config = {
   testPathIgnorePatterns: [
     '/node_modules/',
     '/dist/',
-    'src/@types',
+    'src/types',
     'src/styles',
     'src/theme',
     'src/utils',
@@ -19,7 +19,7 @@ const config: Config = {
   collectCoverageFrom: [
     'src/**/*.ts(x)?',
     '!src/main.tsx',
-    '!src/@types/**',
+    '!src/types/**',
     '!src/**/*.mdx',
     '!src/styles/**',
     '!src/theme/**',
