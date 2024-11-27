@@ -20,4 +20,5 @@ export const Paper = styled(MUIPaper)<PaperProps>(() => ({
   maxWidth: '95vw',
   maxHeight: '95vh',
   padding: '16px',
+  overflow: 'hidden',
 }));
