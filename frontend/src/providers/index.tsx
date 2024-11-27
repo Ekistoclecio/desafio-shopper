@@ -1,3 +1,4 @@
+import { SnackbarProvider } from '@/providers/Snackbar';
 import { globalStyle } from '@/styles/global';
 import { theme } from '@/theme';
 import { CssBaseline, GlobalStyles, ThemeProvider } from '@mui/material';
@@ -11,7 +12,7 @@ export const Providers = ({ children }: ProvidersProps) => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <GlobalStyles styles={globalStyle} />
-      {children}
+      <SnackbarProvider>{children}</SnackbarProvider>
     </ThemeProvider>
   );
 };
