@@ -1,3 +1,4 @@
+import { env } from '@/config/env';
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 
 class ApiService {
@@ -5,7 +6,7 @@ class ApiService {
 
   constructor(entity: string) {
     this.api = axios.create({
-      baseURL: `${import.meta.env.VITE_API_URL}/${entity}`,
+      baseURL: `${env.API_URL}/${entity}`,
       timeout: 10000,
     });
   }
