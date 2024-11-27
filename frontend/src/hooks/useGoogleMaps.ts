@@ -8,7 +8,6 @@ type LatLng = {
 
 const useGoogleMaps = (origin?: LatLng, destination?: LatLng) => {
   const { enqueueSnackbar } = useSnackbar();
-  const apiKey = 'AIzaSyA422FEixa0Puyf8LSRU_2grvo--bP4avw';
   const mapRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -41,7 +40,8 @@ const useGoogleMaps = (origin?: LatLng, destination?: LatLng) => {
     };
 
     const script = document.createElement('script');
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap`;
+    //@ts-expect-error: Property 'GOOGLE_API_KEY' does not exist on type 'Window & typeof globalThis'.
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${__ENV__.GOOGLE_API_KEY}&callback=initMap`;
     script.async = true;
     script.defer = true;
 
@@ -54,7 +54,7 @@ const useGoogleMaps = (origin?: LatLng, destination?: LatLng) => {
         delete window.initMap;
       }
     };
-  }, [apiKey, origin, destination]);
+  }, [origin, destination]);
 
   return mapRef;
 };
