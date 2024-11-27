@@ -52,7 +52,16 @@ export const SnackbarProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         >
           <Alert
             onClose={() => handleClose(id)}
-            sx={{ width: '100%', ...(options.sx || {}) }}
+            sx={{
+              width: '100%',
+              fontSize: '1.6rem',
+              '.MuiAlert-action': {
+                '& svg': {
+                  fontSize: '2rem',
+                },
+              },
+              ...(options.sx || {}),
+            }}
             {...options}
             variant={options.variant || 'filled'}
           >
