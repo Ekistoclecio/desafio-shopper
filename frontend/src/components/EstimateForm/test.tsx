@@ -42,13 +42,16 @@ describe('<EstimateForm />', () => {
     const button = screen.getByRole('button', { name: /calcular rota/i });
     fireEvent.click(button);
 
-    waitFor(() => {
+    await waitFor(() => {
       expect(rideEstimateMock).toHaveBeenCalledTimes(1);
       expect(rideEstimateMock).toHaveBeenCalledWith({
         customer_id: '123456',
         origin: 'Rua A',
         destination: 'Rua B',
       });
+    });
+
+    waitFor(() => {
       expect(navigateMock).toHaveBeenCalledTimes(1);
       expect(navigateMock).toHaveBeenCalledWith('/driver-select', { state: { driver: 'Test Driver' } });
     });
