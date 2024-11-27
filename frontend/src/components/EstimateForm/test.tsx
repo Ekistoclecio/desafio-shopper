@@ -13,6 +13,12 @@ jest.mock('@/providers/Snackbar', () => ({
   })),
 }));
 
+jest.mock('@/config/env', () => ({
+  env: {
+    API_URL: 'http://localhost:mock',
+  },
+}));
+
 describe('<EstimateForm />', () => {
   it('should render the EstimateForm', () => {
     renderWithTheme(<EstimateForm />);

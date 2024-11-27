@@ -15,6 +15,7 @@ const config: Config = {
     'src/pages',
     'src/services',
     'src/hooks',
+    'src/config',
   ],
   collectCoverage: true,
   collectCoverageFrom: [
@@ -31,6 +32,7 @@ const config: Config = {
     '!src/pages/**',
     '!src/services/**',
     '!src/hooks/**',
+    '!src/config/**',
   ],
   setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts'],
   modulePaths: ['<rootDir>/src/'],
