@@ -26,7 +26,16 @@ export const EstimateForm = () => {
     try {
       setLoading(true);
       const response = await rideApiService.rideEstimate(data);
-      navigate('/driver-select', { state: response });
+      navigate('/driver-select', {
+        state: {
+          ...response,
+          customer_id: data.customer_id,
+          addresses: {
+            origin: data.origin,
+            destination: data.destination,
+          },
+        },
+      });
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
       const message =
