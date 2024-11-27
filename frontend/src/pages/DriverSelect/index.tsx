@@ -77,7 +77,6 @@ export const DriverSelect = () => {
     }
   }, []);
 
-  console.log(state);
   return (
     <>
       <Header title="Selecione sua corrida" hiddenNav />
