@@ -19,7 +19,7 @@ export const History = () => {
   const [customerID, setCustomerID] = useState('');
   const [driver, setDriver] = useState<DriverSelectOption>({ label: 'Todos', value: -1 });
   const [driverOptions, setDriverOptions] = useState<DriverSelectOption[]>([]);
-  const [history, setHistory] = useState<Ride[]>([]);
+  const [history, setHistory] = useState<Ride[] | null>(null);
   const [loading, setLoading] = useState(false);
   const location = useLocation();
   const customerIDParam = location.state?.customer_id || null;
@@ -104,19 +104,13 @@ export const History = () => {
         />
       </S.Content>
       <S.HistoryContainer>
-        {!loading && (
-          <>
-            {history.map((ride) => (
-              <HistoryItem key={ride.id} ride={ride} />
-            ))}
-          </>
-        )}
+        {!loading && <>{history && history.map((ride) => <HistoryItem key={ride.id} ride={ride} />)}</>}
         {loading && (
           <S.LoadingContainer>
             <CircularProgress />
           </S.LoadingContainer>
         )}
-        {!loading && history.length === 0 && (
+        {!loading && history && history.length === 0 && (
           <NoDataHistory
             message={
               !customerID
