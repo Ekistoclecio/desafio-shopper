@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NoDataHistory /> should render the NoDataHistory 1`] = `
+<div
+  class="MuiBox-root css-1qxi2ho"
+>
+  <img
+    alt="Nenhuma viagem a ser exibida"
+    data-testid="no-data-image"
+    src="/images/no-data.svg"
+    style="width: 360px; max-width: 100%; height: auto;"
+  />
+  <h4
+    class="MuiTypography-root MuiTypography-h4 css-1qv4sbo-MuiTypography-root"
+  >
+    teste message
+  </h4>
+</div>
+`;
