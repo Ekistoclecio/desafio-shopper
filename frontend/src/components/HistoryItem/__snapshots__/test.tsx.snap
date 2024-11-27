@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HistoryItem /> should render the HistoryItem 1`] = `
+<div
+  class="MuiBox-root css-1huvmu8"
+>
+  <div
+    class="MuiBox-root css-1omog99"
+  >
+    <div
+      class="MuiBox-root css-1918gzb"
+    >
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-17nuh8u-MuiSvgIcon-root"
+        data-testid="CalendarMonthIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m0 16H5V10h14zM9 14H7v-2h2zm4 0h-2v-2h2zm4 0h-2v-2h2zm-8 4H7v-2h2zm4 0h-2v-2h2zm4 0h-2v-2h2z"
+        />
+      </svg>
+      <p
+        class="MuiTypography-root MuiTypography-body1 css-wk4wti-MuiTypography-root"
+      >
+        2021-10-10 - 14:30
+      </p>
+    </div>
+    <p
+      class="MuiTypography-root MuiTypography-body1 css-7qgm32-MuiTypography-root"
+    >
+      R$ 
+      100
+    </p>
+  </div>
+  <div
+    class="MuiBox-root css-0"
+  >
+    <p
+      class="MuiTypography-root MuiTypography-body1 css-7qgm32-MuiTypography-root"
+    >
+       1800 Amphitheatre Parkway, Mountain View, CA 94043
+    </p>
+    <div
+      class="MuiBox-root css-yeouz0"
+    >
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-eng6yr-MuiSvgIcon-root"
+        data-testid="SubdirectoryArrowRightIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="m19 15-6 6-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9z"
+        />
+      </svg>
+      <p
+        class="MuiTypography-root MuiTypography-body1 css-7qgm32-MuiTypography-root"
+      >
+        Endereço final
+      </p>
+    </div>
+  </div>
+  <div
+    class="MuiBox-root css-sivgi7"
+  >
+    <div
+      class="MuiBox-root css-zqpjcf"
+    >
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1umw9bq-MuiSvgIcon-root"
+        data-testid="LocationOnIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7m0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5"
+        />
+      </svg>
+      <p
+        class="MuiTypography-root MuiTypography-body1 css-wk4wti-MuiTypography-root"
+      >
+        100
+         km
+      </p>
+    </div>
+    <div
+      class="MuiBox-root css-zqpjcf"
+    >
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1umw9bq-MuiSvgIcon-root"
+        data-testid="AccessTimeIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2M12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8"
+        />
+        <path
+          d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"
+        />
+      </svg>
+      <p
+        class="MuiTypography-root MuiTypography-body1 css-wk4wti-MuiTypography-root"
+      >
+        1h
+      </p>
+    </div>
+    <div
+      class="MuiBox-root css-zqpjcf"
+    >
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1umw9bq-MuiSvgIcon-root"
+        data-testid="PersonIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4m0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4"
+        />
+      </svg>
+      <p
+        class="MuiTypography-root MuiTypography-body1 css-wk4wti-MuiTypography-root"
+      >
+        Motorista 1
+      </p>
+    </div>
+  </div>
+</div>
+`;
