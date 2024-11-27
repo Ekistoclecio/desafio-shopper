@@ -1,13 +1,11 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 
-const BASE_URL = 'https://api.bgsaude.med.br';
-
 class ApiService {
   private api: AxiosInstance;
 
   constructor(entity: string) {
     this.api = axios.create({
-      baseURL: `${BASE_URL}/${entity}`,
+      baseURL: `${import.meta.env.VITE_API_URL}/${entity}`,
       timeout: 10000,
     });
   }
