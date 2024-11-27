@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DriverSelectFilter /> should render the DriverSelectFilter 1`] = `
+<div
+  class="MuiBox-root css-fraksn"
+>
+  <label
+    class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-animated MuiInputLabel-shrink MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-animated MuiInputLabel-shrink css-zge7vd-MuiFormLabel-root-MuiInputLabel-root"
+    data-shrink="true"
+    id="driver-select-filter"
+  >
+    Motorista
+  </label>
+  <div
+    class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary css-1u4cwut-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
+  >
+    <div
+      aria-controls=":r0:"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-labelledby="driver-select-filter"
+      class="MuiSelect-select MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input css-w76bbz-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input"
+      role="combobox"
+      tabindex="0"
+    >
+      Motorista 1
+    </div>
+    <input
+      aria-hidden="true"
+      aria-invalid="false"
+      class="MuiSelect-nativeInput css-j0riat-MuiSelect-nativeInput"
+      tabindex="-1"
+      value="1"
+    />
+    <svg
+      aria-hidden="true"
+      class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-lohd6h-MuiSvgIcon-root-MuiSelect-icon"
+      data-testid="ArrowDropDownIcon"
+      focusable="false"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M7 10l5 5 5-5z"
+      />
+    </svg>
+    <fieldset
+      aria-hidden="true"
+      class="MuiOutlinedInput-notchedOutline css-1ll44ll-MuiOutlinedInput-notchedOutline"
+    >
+      <legend
+        class="css-w4cd9x"
+      >
+        <span
+          class="notranslate"
+        >
+          ​
+        </span>
+      </legend>
+    </fieldset>
+  </div>
+</div>
+`;
