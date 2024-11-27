@@ -13,6 +13,7 @@ const config: Config = {
     'src/App.tsx',
     'src/routes',
     'src/pages',
+    'src/services',
   ],
   collectCoverage: true,
   collectCoverageFrom: [
@@ -27,6 +28,7 @@ const config: Config = {
     '!src/routes/**',
     '!src/App.tsx',
     '!src/pages/**',
+    '!src/services/**',
   ],
   setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts'],
   modulePaths: ['<rootDir>/src/'],
