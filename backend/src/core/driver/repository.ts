@@ -24,6 +24,12 @@ export class DriverRepository {
   public async findById(id: number): Promise<Driver | null> {
     return this.repository.findOneBy({ id });
   }
+
+  public async findAll(): Promise<Driver[]> {
+    return this.repository.find({
+      select: ['id', 'name'],
+    });
+  }
 }
 
 export const driverRepositoryInstance = DriverRepository.getInstance();

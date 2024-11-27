@@ -9,3 +9,8 @@ export type DriverOption = {
   };
   value: number;
 };
+
+export type DriverSummary = {
+  id: number;
+  name: string;
+};

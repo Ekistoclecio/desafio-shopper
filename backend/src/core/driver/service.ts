@@ -1,6 +1,6 @@
 import { driverDTOInstance } from '@/core/driver/dto';
 import { DriverRepository, driverRepositoryInstance } from '@/core/driver/repository';
-import { DriverOption } from '@/core/driver/types';
+import { DriverOption, DriverSummary } from '@/core/driver/types';
 import { BaseError } from '@/core/errors/baseError';
 
 export class DriverService {
@@ -28,6 +28,20 @@ export class DriverService {
     }
 
     return driverDTOInstance.transformDriversToRideOptions(drivers, distanceInKm);
+  }
+
+  public async getDriverList(): Promise<DriverSummary[]> {
+    const driverList = await this.driverRepository.findAll();
+
+    if (!driverList) {
+      throw new BaseError({
+        error_code: 'DRIVER_NOT_FOUND',
+        error_description: 'Desculpe, no momento não temos nenhum .',
+        response_code: 404,
+      });
+    }
+
+    return driverList;
   }
 }
 
