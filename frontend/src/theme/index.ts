@@ -1,3 +1,4 @@
+import { buttonStyles } from '@/theme/components/button';
 import { createTheme } from '@mui/material';
 
 export const theme = createTheme({
@@ -20,5 +21,9 @@ export const theme = createTheme({
       800: '#333333',
       900: '#1a1a1a',
     },
+  },
+
+  components: {
+    MuiButton: buttonStyles,
   },
 });
