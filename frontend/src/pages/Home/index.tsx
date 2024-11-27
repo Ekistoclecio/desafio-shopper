@@ -1,7 +1,11 @@
+import { EstimateForm } from '@/components/EstimateForm';
+import { Header } from '@/components/Header';
+
 export const Home = () => {
   return (
-    <div>
-      <h1>Home</h1>
-    </div>
+    <>
+      <Header title="Inicie uma viagem" />
+      <EstimateForm />
+    </>
   );
 };
