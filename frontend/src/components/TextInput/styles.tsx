@@ -1,5 +1,5 @@
 import { FormControl, InputBase, InputLabel, Typography } from '@mui/material';
-import { alpha, styled } from '@mui/system';
+import { styled } from '@mui/system';
 
 export const Container = styled(FormControl)(() => ({}));
 
@@ -12,6 +12,7 @@ export const CustomInput = styled(InputBase)(({ theme, error }) => ({
   'label + &': {
     marginTop: '24px',
   },
+
   '& .MuiInputBase-input': {
     borderRadius: 4,
     position: 'relative',
@@ -26,10 +27,11 @@ export const CustomInput = styled(InputBase)(({ theme, error }) => ({
       opacity: 1,
     },
 
+    '&:hover': {
+      borderColor: error ? theme.palette.error.main : theme.palette.grey[900],
+    },
+
     '&:focus': {
-      boxShadow: error
-        ? `${alpha(theme.palette.error.main, 0.25)} 0 0 0 0.2rem`
-        : `${alpha(theme.palette.primary.main, 0.25)} 0 0 0 0.2rem`,
       borderColor: error ? theme.palette.error.main : theme.palette.primary.main,
     },
   },
